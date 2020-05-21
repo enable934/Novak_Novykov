@@ -64,7 +64,7 @@ int main(void) {
     /* Connect EXTI Line0 to PB0 pin */
     GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource0);
 
-    /* PD0 is connected to EXTI_Line0 */
+    /* PB0 is connected to EXTI_Line0 */
     EXTI_InitStruct.EXTI_Line = EXTI_Line0;
     /* Enable interrupt */
     EXTI_InitStruct.EXTI_LineCmd = ENABLE;
@@ -76,7 +76,7 @@ int main(void) {
     EXTI_Init(&EXTI_InitStruct);
 
     /* Add IRQ vector to NVIC */
-    /* PD0 is connected to EXTI_Line0, which has EXTI0_IRQn vector */
+    /* PB0 is connected to EXTI_Line0, which has EXTI0_IRQn vector */
     NVIC_InitStruct.NVIC_IRQChannel = EXTI0_IRQn;
     /* Set priority */
     NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = 0x00;
